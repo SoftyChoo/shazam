@@ -210,6 +210,20 @@ class SecondTab extends StatelessWidget {
               ),
             ), //배경 설정하고 내용을 감싸는 것
             SizedBox(height: MediaQuery.of(context).size.height * 0.12),
+            Container(
+              width: 50,
+              height: 50,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: Colors.blue[300],
+                shape: BoxShape.circle,
+              ),
+              child: Icon(
+                Icons.search,
+                color: Colors.white,
+                size: 30,
+              ),
+            )
           ],
         ),
       ),
@@ -277,6 +291,40 @@ class ThirdTab extends StatelessWidget {
       ],
     };
 
-    return Center(child: Text('세번째 페이지'));
+    return SafeArea(
+      child: Column(
+        children: [
+          Text(
+            "차트",
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+          Stack(
+            children: [
+              Container(
+                width: double.infinity,
+                height: 200,
+                color: Colors.purple[900],
+              ),
+              Column(
+                children: [
+                  Text(
+                    "국가 및 도시별 차트",
+                    style: TextStyle(
+                      color: Colors.purple[900],
+                      backgroundColor: Colors.white,
+                    ),
+                  ),
+                  Text("전 세계", style: TextStyle(color: Colors.white)),
+                ],
+              )
+            ],
+          )
+        ],
+      ),
+    );
   }
 }
