@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 void main() {
   runApp(const MyApp());
@@ -375,6 +376,35 @@ class ThirdTab extends StatelessWidget {
                             ),
                           ),
                         ),
+                        Row(
+                          children: [
+                            ...chartData['korea']!.map((song) {
+                              String imageUrl = song['imageUrl']!;
+                              String name = song['name']!;
+                              String artist = song['artist']!;
+
+                              return Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  children: [
+                                    Image.network(
+                                      imageUrl,
+                                      width: 150,
+                                      height: 150,
+                                    ),
+                                    Text(
+                                      name,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Text(artist),
+                                  ],
+                                ),
+                              );
+                            }),
+                          ],
+                        )
                       ],
                     ),
                   ],
