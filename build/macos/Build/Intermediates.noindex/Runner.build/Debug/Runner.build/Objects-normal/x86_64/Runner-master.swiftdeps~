@@ -1,0 +1,8 @@
+version: "Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)"
+options: "f7d13ff2557fc897333a0087ec8955d2c7c25324d3e865ea6b86e6dd6aee89f2"
+build_start_time: [1687423194, 789055000]
+build_end_time: [1687423194, 901496000]
+inputs:
+  "/Users/minsuchoo/Desktop/Flutter/shazam/macos/Flutter/GeneratedPluginRegistrant.swift": !private [1687423168, 630859690]
+  "/Users/minsuchoo/Desktop/Flutter/shazam/macos/Runner/AppDelegate.swift": !private [1686756980, 0]
+  "/Users/minsuchoo/Desktop/Flutter/shazam/macos/Runner/MainFlutterWindow.swift": !private [1686756980, 0]
