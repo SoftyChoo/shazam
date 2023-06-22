@@ -161,9 +161,55 @@ class SecondTab extends StatelessWidget {
                       ],
                     ),
                   ),
+                  Spacer(),
+                  GestureDetector(
+                    onTap: () {
+                      DefaultTabController.of(context).animateTo(2);
+                    },
+                    child: Column(
+                      children: [
+                        Icon(
+                          Icons.show_chart,
+                          color: Colors.white,
+                        ),
+                        Text(
+                          "차트",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
-            )
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.1,
+            ), //MediaQuery : 현재 화면의 크기를 가져와서 화면 높이의 10%로 맞춤
+            Text(
+              "shazam 하려면 탭하세요",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.06),
+            Container(
+              alignment: Alignment.center,
+              width: 200,
+              height: 200,
+              decoration: BoxDecoration(
+                color: Colors.blue[300],
+                shape: BoxShape.circle,
+              ),
+              child: Image.network(
+                "https://i.ibb.co/hxNbZ8p/shazam.png",
+                color: Colors.white,
+                width: 130,
+                height: 130,
+              ),
+            ), //배경 설정하고 내용을 감싸는 것
+            SizedBox(height: MediaQuery.of(context).size.height * 0.12),
           ],
         ),
       ),
