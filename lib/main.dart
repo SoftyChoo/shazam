@@ -297,28 +297,54 @@ class ThirdTab extends StatelessWidget {
           Text(
             "차트",
             style: TextStyle(
-              fontSize: 18,
+              fontSize: 20,
               fontWeight: FontWeight.bold,
             ),
           ),
           SizedBox(height: MediaQuery.of(context).size.height * 0.02),
           Stack(
+            alignment: Alignment.center,
             children: [
               Container(
                 width: double.infinity,
-                height: 200,
+                height: 220,
                 color: Colors.purple[900],
               ),
               Column(
                 children: [
-                  Text(
-                    "국가 및 도시별 차트",
-                    style: TextStyle(
-                      color: Colors.purple[900],
-                      backgroundColor: Colors.white,
+                  Container(
+                    //버튼 크기를 설정해주기 위해 컨테이너로 감싼다.
+                    width: MediaQuery.of(context).size.width * 0.8,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all(Colors.white),
+                      ),
+                      child: Text(
+                        "국가 및 도시별 차트",
+                        style: TextStyle(
+                          color: Colors.purple[900],
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                      ),
                     ),
                   ),
-                  Text("전 세계", style: TextStyle(color: Colors.white)),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "전 세계",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),
+                  ),
+                  Row(
+                    children: [Column()],
+                  )
                 ],
               )
             ],
