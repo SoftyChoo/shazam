@@ -302,53 +302,86 @@ class ThirdTab extends StatelessWidget {
             ),
           ),
           SizedBox(height: MediaQuery.of(context).size.height * 0.02),
-          Stack(
-            alignment: Alignment.center,
-            children: [
-              Container(
-                width: double.infinity,
-                height: 220,
-                color: Colors.purple[900],
-              ),
-              Column(
-                children: [
-                  Container(
-                    //버튼 크기를 설정해주기 위해 컨테이너로 감싼다.
-                    width: MediaQuery.of(context).size.width * 0.8,
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(Colors.white),
-                      ),
-                      child: Text(
-                        "국가 및 도시별 차트",
-                        style: TextStyle(
-                          color: Colors.purple[900],
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
+          Expanded(
+            child: ListView(
+              children: [
+                Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Container(
+                      width: double.infinity,
+                      height: 220,
+                      color: Colors.purple[900],
+                    ),
+                    Column(
+                      children: [
+                        Container(
+                          //버튼 크기를 설정해주기 위해 컨테이너로 감싼다.
+                          width: MediaQuery.of(context).size.width * 0.8,
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            style: ButtonStyle(
+                              backgroundColor:
+                                  MaterialStateProperty.all(Colors.white),
+                            ),
+                            child: Text(
+                              "국가 및 도시별 차트",
+                              style: TextStyle(
+                                color: Colors.purple[900],
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18,
+                              ),
+                            ),
+                          ),
                         ),
-                      ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          "전 세계",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+                Row(
+                  children: [
+                    Column(
+                      children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width * 1,
+                          child: Padding(
+                            padding: const EdgeInsets.all(12.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  "대한민국 차트",
+                                  style: TextStyle(fontSize: 18),
+                                ),
+                                Text(
+                                  "모두보기",
+                                  style: TextStyle(
+                                    fontSize: 17,
+                                    color: Colors.blue,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    "전 세계",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                    ),
-                  ),
-                  Row(
-                    children: [Column()],
-                  )
-                ],
-              )
-            ],
-          )
+                  ],
+                )
+              ],
+            ),
+          ),
         ],
       ),
     );
