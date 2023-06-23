@@ -350,6 +350,11 @@ class ThirdTab extends StatelessWidget {
                     )
                   ],
                 ),
+                Container(
+                  height: 10,
+                  width: MediaQuery.of(context).size.width * 1,
+                  color: Colors.grey,
+                ),
                 Row(
                   children: [
                     Column(
@@ -386,14 +391,17 @@ class ThirdTab extends StatelessWidget {
                               return Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Column(
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.start, //위젯들의 정렬방법을 결정
                                   children: [
                                     Image.network(
                                       imageUrl,
-                                      width: 150,
-                                      height: 150,
+                                      width: 125,
+                                      height: 125,
                                     ),
                                     Text(
                                       name,
+                                      textAlign: TextAlign.left,
                                       style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                       ),
