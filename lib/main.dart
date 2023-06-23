@@ -416,7 +416,141 @@ class ThirdTab extends StatelessWidget {
                       ],
                     ),
                   ],
-                )
+                ),
+                Container(
+                  height: 10,
+                  width: MediaQuery.of(context).size.width * 1,
+                  color: Colors.grey,
+                ),
+                Row(
+                  children: [
+                    Column(
+                      children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width * 1,
+                          child: Padding(
+                            padding: const EdgeInsets.all(12.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  "글로벌 차트",
+                                  style: TextStyle(fontSize: 18),
+                                ),
+                                Text(
+                                  "모두보기",
+                                  style: TextStyle(
+                                    fontSize: 17,
+                                    color: Colors.blue,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Row(
+                          children: [
+                            ...chartData['global']!.map((song) {
+                              String imageUrl = song['imageUrl']!;
+                              String name = song['name']!;
+                              String artist = song['artist']!;
+
+                              return Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.start, //위젯들의 정렬방법을 결정
+                                  children: [
+                                    Image.network(
+                                      imageUrl,
+                                      width: 125,
+                                      height: 125,
+                                    ),
+                                    Text(
+                                      name,
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Text(artist),
+                                  ],
+                                ),
+                              );
+                            }),
+                          ],
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+                Container(
+                  height: 10,
+                  width: MediaQuery.of(context).size.width * 1,
+                  color: Colors.grey,
+                ),
+                Row(
+                  children: [
+                    Column(
+                      children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width * 1,
+                          child: Padding(
+                            padding: const EdgeInsets.all(12.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  "뉴욕 차트",
+                                  style: TextStyle(fontSize: 18),
+                                ),
+                                Text(
+                                  "모두보기",
+                                  style: TextStyle(
+                                    fontSize: 17,
+                                    color: Colors.blue,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Row(
+                          children: [
+                            ...chartData['newyork']!.map((song) {
+                              String imageUrl = song['imageUrl']!;
+                              String name = song['name']!;
+                              String artist = song['artist']!;
+
+                              return Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.start, //위젯들의 정렬방법을 결정
+                                  children: [
+                                    Image.network(
+                                      imageUrl,
+                                      width: 125,
+                                      height: 125,
+                                    ),
+                                    Text(
+                                      name,
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Text(artist),
+                                  ],
+                                ),
+                              );
+                            }),
+                          ],
+                        )
+                      ],
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
