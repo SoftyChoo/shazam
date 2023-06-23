@@ -122,30 +122,153 @@ class FirstTab extends StatelessWidget {
     return SafeArea(
       child: Column(
         children: [
-          Container(
-            width: MediaQuery.of(context).size.width * 1,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.settings),
+              ),
+              Text(
+                '라이브러리',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+              Text(
+                "공백공백",
+                style: TextStyle(color: Colors.transparent),
+              ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.all(13.0),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.settings),
+                SizedBox(width: 2),
+                Image.network(
+                  "https://i.ibb.co/hxNbZ8p/shazam.png",
+                  color: Colors.black,
+                  width: 20,
+                  height: 20,
                 ),
                 Text(
-                  '라이브러리',
+                  "  Shazam",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
                   ),
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.settings,
-                    color: Colors.transparent,
+                )
+              ],
+            ),
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width * 0.93,
+            child: Divider(
+              color: Colors.grey,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(13.0),
+            child: Row(
+              children: [
+                Icon(Icons.person),
+                Text(
+                  "  아티스트",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                )
+              ],
+            ),
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width * 0.93,
+            child: Divider(
+              color: Colors.grey,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(13.0),
+            child: Row(
+              children: [
+                Icon(Icons.music_note),
+                Text(
+                  "  회원님을 위한 재생목록",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                )
+              ],
+            ),
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width * 0.93,
+            child: Divider(
+              color: Colors.grey,
+            ),
+          ),
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Text(
+                  "최근 Shazam",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-              ],
+              ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: SingleChildScrollView(
+              child: Row(
+                children: [
+                  ...songs!.map(
+                    (song2) {
+                      String imageUrl = song2['imageUrl']!;
+                      String title = song2['title']!;
+                      String artist = song2['artist']!;
+                      return Container(
+                        width: MediaQuery.of(context).size.width * 0.45,
+                        child: Card(
+                          child: Column(
+                            children: [
+                              Image.network(
+                                imageUrl,
+                                fit: BoxFit.cover,
+                                height: 190,
+                              ),
+                              Text(
+                                title,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18,
+                                ),
+                              ),
+                              Text(artist),
+                              SizedBox(
+                                height: 50,
+                              ),
+                              Image.network(
+                                "https://i.ibb.co/KG9m5QS/applemusic.png",
+                                width: 60,
+                              ),
+                              SizedBox(height: 10),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ],
+              ),
             ),
           ),
         ],
