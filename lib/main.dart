@@ -225,57 +225,59 @@ class FirstTab extends StatelessWidget {
               ),
             ],
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: SingleChildScrollView(
-              scrollDirection: Axis.vertical,
-              child: Wrap(
-                children: [
-                  ...songs!.map(
-                    (song2) {
-                      String imageUrl = song2['imageUrl']!;
-                      String title = song2['title']!;
-                      String artist = song2['artist']!;
-                      return Container(
-                        width: MediaQuery.of(context).size.width * 0.45,
-                        child: Card(
-                          shape: RoundedRectangleBorder(
-                            side: BorderSide(
-                              color: Colors.grey[300]!,
-                              width: 1.0,
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Wrap(
+                  children: [
+                    ...songs!.map(
+                      (song2) {
+                        String imageUrl = song2['imageUrl']!;
+                        String title = song2['title']!;
+                        String artist = song2['artist']!;
+                        return Container(
+                          width: MediaQuery.of(context).size.width * 0.45,
+                          child: Card(
+                            shape: RoundedRectangleBorder(
+                              side: BorderSide(
+                                color: Colors.grey[300]!,
+                                width: 1.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
                             ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          child: Column(
-                            children: [
-                              Image.network(
-                                imageUrl,
-                                fit: BoxFit.cover,
-                                height: 190,
-                              ),
-                              Text(
-                                title,
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18,
+                            child: Column(
+                              children: [
+                                Image.network(
+                                  imageUrl,
+                                  fit: BoxFit.cover,
+                                  height: 190,
                                 ),
-                              ),
-                              Text(artist),
-                              SizedBox(
-                                height: 50,
-                              ),
-                              Image.network(
-                                "https://i.ibb.co/KG9m5QS/applemusic.png",
-                                width: 60,
-                              ),
-                              SizedBox(height: 10),
-                            ],
+                                Text(
+                                  title,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 18,
+                                  ),
+                                ),
+                                Text(artist),
+                                SizedBox(
+                                  height: 50,
+                                ),
+                                Image.network(
+                                  "https://i.ibb.co/KG9m5QS/applemusic.png",
+                                  width: 60,
+                                ),
+                                SizedBox(height: 10),
+                              ],
+                            ),
                           ),
-                        ),
-                      );
-                    },
-                  ),
-                ],
+                        );
+                      },
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
