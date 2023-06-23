@@ -228,7 +228,8 @@ class FirstTab extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: SingleChildScrollView(
-              child: Row(
+              scrollDirection: Axis.vertical,
+              child: Wrap(
                 children: [
                   ...songs!.map(
                     (song2) {
@@ -238,6 +239,13 @@ class FirstTab extends StatelessWidget {
                       return Container(
                         width: MediaQuery.of(context).size.width * 0.45,
                         child: Card(
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(
+                              color: Colors.grey[300]!,
+                              width: 1.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
                           child: Column(
                             children: [
                               Image.network(
