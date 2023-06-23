@@ -125,7 +125,7 @@ class FirstTab extends StatelessWidget {
           Container(
             width: MediaQuery.of(context).size.width * 1,
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 IconButton(
                   onPressed: () {},
@@ -137,7 +137,13 @@ class FirstTab extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
                   ),
-                  textAlign: TextAlign.center,
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.settings,
+                    color: Colors.transparent,
+                  ),
                 ),
               ],
             ),
