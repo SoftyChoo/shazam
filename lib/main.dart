@@ -119,7 +119,32 @@ class FirstTab extends StatelessWidget {
       },
     ];
 
-    return Center(child: Text('첫번째 페이지'));
+    return SafeArea(
+      child: Column(
+        children: [
+          Container(
+            width: MediaQuery.of(context).size.width * 1,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(Icons.settings),
+                ),
+                Text(
+                  '라이브러리',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
 
